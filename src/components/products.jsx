@@ -128,9 +128,7 @@ class Products extends React.Component {
 
   fetchProducts = async () => {
     try {
-      let response = await fetch(`hhttps://m6d5.herokuapp.com/products`, {
-        method: "GET",
-      });
+      let response = await fetch(`hhttps://m6d5.herokuapp.com/products`);
       response = await response.json();
 
       console.log(response);
