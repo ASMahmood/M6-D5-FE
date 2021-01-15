@@ -48,7 +48,7 @@ class Products extends React.Component {
 
     console.log("actually in");
     try {
-      let response = await fetch(`http://localhost:3002/reviews`, {
+      let response = await fetch(`https://m6d5.herokuapp.com/reviews`, {
         method: "POST",
         body: JSON.stringify(project),
         headers: new Headers({
@@ -62,7 +62,7 @@ class Products extends React.Component {
 
       //add it to the products reviews array
       let secondResponse = await fetch(
-        `http://localhost:3002/products/${this.state.currentId}/add-review/${res}`,
+        `https://m6d5.herokuapp.com/products/${this.state.currentId}/add-review/${res}`,
         {
           method: "POST",
           body: JSON.stringify({
@@ -83,7 +83,7 @@ class Products extends React.Component {
 
   deleteProduct = async (e, id) => {
     try {
-      let response = await fetch(`http://localhost:3002/products/${id}`, {
+      let response = await fetch(`https://m6d5.herokuapp.com/products/${id}`, {
         method: "DELETE",
       });
       console.log(response);
@@ -112,7 +112,7 @@ class Products extends React.Component {
   getTheReviews = async (id) => {
     this.openSecondModal();
     try {
-      let response = await fetch(`http://localhost:3002/products/${id}`, {
+      let response = await fetch(`https://m6d5.herokuapp.com/products/${id}`, {
         method: "GET",
       });
       response = await response.json();
@@ -128,7 +128,7 @@ class Products extends React.Component {
 
   fetchProducts = async () => {
     try {
-      let response = await fetch(`http://localhost:3002/products`, {
+      let response = await fetch(`hhttps://m6d5.herokuapp.com/products`, {
         method: "GET",
       });
       response = await response.json();

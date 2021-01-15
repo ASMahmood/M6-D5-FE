@@ -44,7 +44,7 @@ class Body extends React.Component {
     };
     console.log("actually in");
     try {
-      let response = await fetch(`http://localhost:3002/products`, {
+      let response = await fetch(`https://m6d5.herokuapp.com/products`, {
         method: "POST",
         body: JSON.stringify(project),
         headers: new Headers({
@@ -74,13 +74,16 @@ class Body extends React.Component {
       let image = new FormData();
       await image.append("productImage", this.state.image);
       console.log(image);
-      await fetch("http://localhost:3002/products/" + productID + "/upload", {
-        method: "POST",
-        body: image,
-        headers: new Headers({
-          Accept: "application/json",
-        }),
-      });
+      await fetch(
+        "https://m6d5.herokuapp.com/products/" + productID + "/upload",
+        {
+          method: "POST",
+          body: image,
+          headers: new Headers({
+            Accept: "application/json",
+          }),
+        }
+      );
     } catch (error) {
       console.log(error);
     }
